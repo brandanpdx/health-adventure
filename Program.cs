@@ -51,6 +51,25 @@ public class Program
     }
   }
 
+  public static void Win()
+  {
+    if(Game.Won())
+    {
+      Console.WriteLine("You have perfect health, you Won!");
+      Console.WriteLine("Would you like to restart the game? [Y] or [N].");
+      string restartAnswer = Console.ReadLine();
+      if (restartAnswer == "N")
+      {
+        Console.WriteLine("Goodbye......");
+        Environment.Exit(0);
+      }
+      else 
+      {
+        Main();
+      }
+    }
+  }
+
   // Question 1:
   public static void QuestionOne()
   {
@@ -154,6 +173,7 @@ public class Program
     }
     Console.WriteLine("\nCurrent Health: " + PrintEnergyBar() + " " + Game.Energy + "\n");
     CheckIfDead();
+    Win();
   }
 
   // Question ^:
@@ -175,5 +195,6 @@ public class Program
     }
     Console.WriteLine("\nCurrent Health: " + PrintEnergyBar() + " " + Game.Energy + "\n");
     CheckIfDead();    
+    Win();
   }
 }

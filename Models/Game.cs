@@ -14,5 +14,14 @@ namespace Model
         return false;
       }
     }
+
+    public static bool Won()
+    {
+      if(Energy >= 10)
+      {
+        return true;
+      }
+      return false;
+    }
   }
 }
